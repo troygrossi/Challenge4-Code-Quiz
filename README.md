@@ -10,7 +10,7 @@
 - Quiz ends when time reaches zero or all questions are answered
 - Initials and score is saved when game ends
 
-link:
+link: https://troygrossi.github.io/Challenge4-Code-Quiz/
 
 ScreenShot:
 <img src ="./assets/images/screenshot.png"/>

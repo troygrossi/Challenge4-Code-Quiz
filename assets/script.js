@@ -199,7 +199,7 @@ var decrementTime = function () {
     time = 0;
     timeEl.firstElementChild.textContent = time;
     clearInterval(timer);
-    document.location = "./../initials.html";
+    document.location = "./initials.html";
     console.log(document.location);
     localStorage.setItem("temp", right);
     var scoreEl = document.querySelector("#score");
