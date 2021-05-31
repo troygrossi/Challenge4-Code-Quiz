@@ -114,22 +114,69 @@ var questions = [
 // Done initializing QA objects
 
 // get elements to stor Q&A text
+var startEl = document.querySelector("#start");
 var questionEl = document.querySelector("#question");
 var answer1El = document.querySelector("#button-first");
 var answer2El = document.querySelector("#button-second");
 var answer3El = document.querySelector("#button-third");
 var answer4El = document.querySelector("#button-fourth");
-console.dir(answer1El);
+var correctEl = document.querySelector(".grade");
+
+var userPick = 0;
 var count = 1;
+var wrong = 0;
+var right = 0;
 var answerClicked = function () {
+  console.log("test");
   questionEl.textContent = questions[count].question;
   answer1El.firstElementChild.textContent = questions[count].answer1;
   answer2El.firstElementChild.textContent = questions[count].answer2;
   answer3El.firstElementChild.textContent = questions[count].answer3;
   answer4El.firstElementChild.textContent = questions[count].answer4;
+  if (count != 1) {
+    if (userPick === questions[count].correctAnswer) {
+      correctEl.textContent = "Correct!";
+      right++;
+    } else {
+      correctEl.textContent = "Wrong!";
+      wrong++;
+    }
+  }
+  console.log(userPick, questions[count].correctAnswer);
   count++;
+  if (count === count.length + 1) {
+    endQuiz();
+  }
 };
-answer1El.addEventListener("click", answerClicked);
-answer2El.addEventListener("click", answerClicked);
-answer3El.addEventListener("click", answerClicked);
-answer4El.addEventListener("click", answerClicked);
+
+var chooseAnswer1 = function () {
+  userPick = 1;
+  answerClicked();
+};
+var chooseAnswer2 = function () {
+  userPick = 2;
+  answerClicked();
+};
+var chooseAnswer3 = function () {
+  userPick = 3;
+  answerClicked();
+};
+var chooseAnswer4 = function () {
+  userPick = 4;
+  answerClicked();
+};
+var endQuiz = function () {};
+var startQuiz = function () {
+  startEl.remove();
+  answerClicked();
+};
+
+if (answer1El || answer2El || answer3El || answer4El) {
+  answer1El.addEventListener("click", chooseAnswer1);
+  answer2El.addEventListener("click", chooseAnswer2);
+  answer3El.addEventListener("click", chooseAnswer3);
+  answer4El.addEventListener("click", chooseAnswer4);
+}
+if (start) {
+  start.addEventListener("click", startQuiz);
+}

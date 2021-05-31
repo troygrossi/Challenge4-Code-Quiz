@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <section class="initials-container">
+      <form class="initials-form">
+        <h2>Your Score: <span></span></h2>
+        <label for="initials">Initials: </label>
+        <input id="initials" type="text" maxlength="3" />
+      </form>
+      <button
+        id="button-initials-home"
+        onclick="window.location='./index.html'"
+      >
+        Return Home
+      </button>
+
+      <button
+        id="button-initials-score"
+        onclick="window.location='./score.html'"
+      >
+        Check High Scores
+      </button>
+    </section>
+    <script src="./assets/script.js"></script>
+  </body>
+</html>

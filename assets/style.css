@@ -17,30 +17,18 @@
   display: flex;
   justify-content: space-around;
   padding-top: 30px;
-  background-color: var(--button-color);
 }
-.page-top .score {
-  flex: 0 1 25%;
-  background-color: var(--primary-color);
-}
-.page-top #button-score {
-  font-size: 25px;
-  padding: 5px;
-  border-radius: 10px;
-  background-color: orange;
-}
+
 .page-top .timer {
-  flex: 0 1 25%;
-  text-align: right;
-  font-size: 30px;
-  background-color: var(--primary-color);
+  flex: 0 1 50%;
+  text-align: left;
+  font-size: 35px;
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: yellow;
   width: var(--body-width);
   margin: 0 auto 0 auto;
 }
@@ -51,6 +39,15 @@
   border-bottom-style: solid;
   border-bottom-color: rgba(0, 0, 0, 0.39);
   text-align: center;
+}
+#start {
+  font-size: 40px;
+  background-color: rgba(7, 204, 7, 0.527);
+  margin: 0 auto 0 auto;
+  width: 70%;
+  border-style: solid;
+  border-color: white;
+  border-radius: 30px;
 }
 .question-container #question {
   font-size: 30px;
@@ -82,4 +79,87 @@
 
 .grade {
   font-size: 50px;
+}
+
+/* Home Page */
+.body-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  text-align: center;
+}
+.home .title-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+.title-container h1 {
+  font-size: 50px;
+}
+.home .timer {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+.body-home div {
+  width: 30%;
+}
+#button-qa {
+  width: 100%;
+  margin-bottom: 50px;
+  font-size: 30px;
+  background-color: rgb(43, 187, 43);
+}
+#button-score {
+  width: 100%;
+  font-size: 30px;
+  background-color: rgb(247, 123, 7);
+}
+
+/* High Scores Page */
+.scores-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.scores-container h1 {
+  margin-top: 50px;
+  border-bottom-style: solid;
+  font-size: 50px;
+}
+.score {
+  border-bottom-style: dashed;
+  border-bottom-color: rgba(0, 0, 0, 0.514);
+}
+
+/* Score/Initials Page */
+.initials-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+.initials-form h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+.initials-form label {
+  font-size: 40px;
+}
+.initials-form input {
+  height: 40px;
+  width: 20%;
+  font-size: 30px;
+}
+#button-initials-home {
+  width: 30%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 30px;
+  background-color: rgb(43, 187, 43);
+}
+#button-initials-score {
+  width: 30%;
+  font-size: 30px;
+  background-color: rgb(247, 123, 7);
 }
