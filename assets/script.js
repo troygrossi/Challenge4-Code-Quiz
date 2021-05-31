@@ -199,7 +199,8 @@ var decrementTime = function () {
     time = 0;
     timeEl.firstElementChild.textContent = time;
     clearInterval(timer);
-    document.location = "./initials.html";
+    document.location =
+      "https://troygrossi.github.io/Challenge4-Code-Quiz/initials.html";
     console.log(document.location);
     localStorage.setItem("temp", right);
     var scoreEl = document.querySelector("#score");
