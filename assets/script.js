@@ -153,7 +153,6 @@ var answerClicked = function () {
       time -= 10;
     }
   }
-  console.log(userPick, questions[count].correctAnswer);
   count++;
   if (count === questions.length) {
     endQuiz();
@@ -184,7 +183,6 @@ var endQuiz = function () {
 var startQuiz = function () {
   startEl.remove();
   count++;
-  console.log("count3 ", count);
 
   answerClicked();
   timer = setInterval(decrementTime, 1 * 1000);
@@ -194,13 +192,11 @@ var time = 100;
 var decrementTime = function () {
   time--;
   timeEl.firstElementChild.textContent = time;
-  console.log(time);
   if (time <= 0) {
     time = 0;
     timeEl.firstElementChild.textContent = time;
     clearInterval(timer);
-    document.location =
-      "https://troygrossi.github.io/Challenge4-Code-Quiz/initials.html";
+    document.location = "./initials.html";
     console.log(document.location);
     localStorage.setItem("temp", right);
     var scoreEl = document.querySelector("#score");
@@ -233,6 +229,5 @@ if (highScore) {
 }
 
 if (initials) {
-  debugger;
   initials.addEventListener("initials", addScore);
 }
