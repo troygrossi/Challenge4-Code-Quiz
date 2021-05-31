@@ -9,3 +9,8 @@
 - Time subtracted when question answered wrong
 - Quiz ends when time reaches zero or all questions are answered
 - Initials and score is saved when game ends
+
+link:
+
+ScreenShot:
+<img src ="./assets/images/screenshot.png"/>

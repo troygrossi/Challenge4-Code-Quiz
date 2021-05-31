@@ -116,6 +116,9 @@ var questions = [
 // get elements to stor Q&A text
 var startEl = document.querySelector("#start");
 var timeEl = document.querySelector("#time");
+var scoreEl = document.querySelector("#score");
+var initials = document.querySelector("#initials");
+var highScore = document.querySelector("button-score");
 var questionEl = document.querySelector("#question");
 var answer1El = document.querySelector("#button-first");
 var answer2El = document.querySelector("#button-second");
@@ -128,6 +131,9 @@ var count = 0;
 var wrong = 0;
 var right = 0;
 var answerClicked = function () {
+  if (count >= questions.length) {
+    return;
+  }
   if (count === 0) {
     startQuiz();
     return;
@@ -193,9 +199,24 @@ var decrementTime = function () {
     time = 0;
     timeEl.firstElementChild.textContent = time;
     clearInterval(timer);
-    window.location.href = "./initials.html";
+    document.location = "./../initials.html";
+    console.log(document.location);
+    localStorage.setItem("temp", right);
+    var scoreEl = document.querySelector("#score");
+    scoreEl.textContent = localStorage.getItem("temp");
   }
 };
+
+var checkHighScores = function () {};
+
+var addScore = function () {
+  localStorage.setItem(initials.textContent, right);
+  console.dir(initials);
+};
+
+if (time === 0) {
+}
+
 if (answer1El || answer2El || answer3El || answer4El) {
   answer1El.addEventListener("click", chooseAnswer1);
   answer2El.addEventListener("click", chooseAnswer2);
@@ -204,4 +225,13 @@ if (answer1El || answer2El || answer3El || answer4El) {
 }
 if (startEl) {
   startEl.addEventListener("click", startQuiz);
+}
+
+if (highScore) {
+  highScore.addEventListener("click", checkHighScores);
+}
+
+if (initials) {
+  debugger;
+  initials.addEventListener("initials", addScore);
 }
